@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Chat</title>
+<script type="text/javascript" src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="design.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+<div class='handler'>
+    <div class='tools'>
+        <ul style="list-style-type: none">
+            <li>Files</li>
+            <li>Video Call</li>
+            <li>Video Message</li>
+            <li>Voice Call</li>
+            <li>Games</li>
+            <li>Activities</li>
+        </ul>
+    </div>
+</div>
+
+<div class='chatarea'>
+    <div class='leftyc'>
+        <div class='back'>
+            <div class='front'>
+                <img id='a' src="http://www.albinoblacksheep.com/download/icon/livemessenger.png">
+            </div>
+        </div>
+    </div>
+    <div class='rightyc'>
+        <h2>Grupo de Web</h2>
+        <h3>hmmmh</h3>
+        <textarea readonly class ="mensajes" id='convo'></textarea>
+    </div>
+</div>
+<div class='writearea'>
+    <div class='leftyw'>
+        <div class='back'>
+            <div class='front'>
+                <img id='b' src="https://i.giphy.com/media/HWq7Dfcf3kScg/giphy.webp">
+            </div>
+        </div>
+    </div>
+    <div class='rightyw'>
+    	<form id='todo' action="http://52.88.26.79:7000/" method="post">
+        	<textarea class = 'texto' id="textmensaje">Hola</textarea>
+    	</form>
+    </div>
+    <button type="sending" class="sendm">Send</button>
+</div>
+<div class=footer>
+    <p>Hugo Noriega</p>
+    <p>14097</p>
+</div>
+
+<!--
+
+Jquery
+
+-->
+<script type="text/javascript">
+
+$(function() { 
+    $('#form').on('sending', function(e) { 
+        e.preventDefault(); 
+        $.post("http://52.88.26.79:7000/", $("#form").serialize(), function(data) {
+		});
+		$("JuiceHN").val('');
+		$("#textmensaje").val('');
+    });
+});
+$(function() {
+		$("#load").click( function(){
+			$.getJSON( "http://52.88.26.79:7000").done( function( data ) {
+				var t = "";
+				for (var i = 0; i<data.length;i++){
+						t= t + data[i].username +" : "+data[i].chatmessage+"\n";
+				} 
+				$( "#convo" ).text(t);
+				$( "#convo" ).html($( "#convo" ).html().replace(/\n/g,'<br/>'));
+			});
+        }
+      );
+});
+
+</script>
+
+</body>
+
+</html>
