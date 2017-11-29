@@ -1,0 +1,103 @@
+body{
+    background: linear-gradient(#66CCFF, #F0F8FF);
+    background-repeat:no-repeat; 
+}
+.tools{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #66CCFF;
+}
+li{
+  display: inline;  
+  height: 60px;
+  width: 200px;
+  color: black;
+  color:white;
+  font-size: 20px;
+  padding: 5px 5px 5px 5px;
+}
+li:hover{
+    cursor: pointer;
+    background-color: #3399FF;
+}
+.chatarea{
+    display: flex;
+    justify-content: center;
+
+}
+.writearea{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.leftyc{
+    justify-content: left;
+    padding-right: 10px;
+    display: inline;
+
+}
+.back{
+    width: 140px; 
+    height: 140px; 
+    background:linear-gradient(#D9FFD9,#66FF66); 
+    border-radius: 10px;
+}
+.front{
+    position: relative;
+    width: 120px; 
+    height: 120px;
+    margin: 10px;
+    top:10px; 
+    background:white;
+    border-radius: 10px;
+}
+.leftyw{
+    justify-content: left;
+    padding-right: 10px;
+    display: inline;
+}
+.rightyw{
+    padding-left: 20px;
+}
+#a{
+    width: 120px;
+    height: 120px;
+}
+#b{
+    width: 120px;
+    height: 120px;
+}    
+.mensajes{
+    width: 600px;
+    height: 500px;
+    justify-content: right;
+    display: inline;
+    resize: none;
+}
+.texto{
+    width: 600px;
+    height: 130px;
+    justify-content: right;
+    display: inline;
+    resize: none;
+}
+.footer{
+    justify-content: center;
+    display: flex;
+}
+p{
+    font-size: 15px;
+}
+h2{
+    font-family: monospace;
+}
+h3{
+    font-family: monospace;
+}
+button{
+    background-color: #66CCFF;
+}
+button:hover{
+    cursor: pointer;
+}
